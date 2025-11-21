@@ -1,0 +1,13 @@
+# Render.com deployment configuration
+# This file tells Render how to deploy your application
+
+services:
+  - type: web                    # Type of service (web application)
+    name: restaurant-recommender-bsp3  # Name of your application on Render
+    env: python                  # Environment (Python)
+    plan: free                   # Pricing plan (free tier)
+    buildCommand: pip install -r requirements.txt  # Command to install dependencies
+    startCommand: gunicorn app:app  # Command to start the application
+    envVars:
+      - key: PYTHON_VERSION      # Environment variable for Python version
+        value: 3.9.0             # Specific Python version to use

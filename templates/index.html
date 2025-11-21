@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Recommender System - BSP 3 Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍽️ Restaurant Recommender System</h1>
+            <p class="subtitle">BSP 3 Project - Israel Micheal - University of Luxembourg</p>
+            <p class="stats">Exploring {{ total_restaurants }} restaurants with 4 recommendation algorithms</p>
+        </div>
+
+        <div class="algorithm-section">
+            <h2>🎯 Select Recommendation Algorithm</h2>
+            <div class="algorithm-buttons">
+                <button class="algo-btn active" data-algorithm="content">
+                    <span class="icon">🔍</span>
+                    <span class="title">Content-Based</span>
+                    <span class="desc">Cosine Similarity</span>
+                </button>
+                <button class="algo-btn" data-algorithm="popular">
+                    <span class="icon">🔥</span>
+                    <span class="title">Popularity-Based</span>
+                    <span class="desc">Weighted Scoring</span>
+                </button>
+                <button class="algo-btn" data-algorithm="category">
+                    <span class="icon">🍽️</span>
+                    <span class="title">Category-Based</span>
+                    <span class="desc">Cuisine Groups</span>
+                </button>
+                <button class="algo-btn" data-algorithm="kmeans">
+                    <span class="icon">🤖</span>
+                    <span class="title">K-Means Clustering</span>
+                    <span class="desc">ML Clustering (7 clusters)</span>
+                </button>
+                <button class="algo-btn" data-algorithm="filter">
+                    <span class="icon">⚡</span>
+                    <span class="title">Filter Search</span>
+                    <span class="desc">Basic Filtering</span>
+                </button>
+            </div>
+            <div id="algorithmInfo" class="algorithm-info">
+                <strong>Content-Based Filtering</strong>
+                <p>Finds restaurants similar to your input using cosine similarity and feature matching. Analyzes cuisine types, ratings, and review sentiments.</p>
+                <small>💡 Requires a restaurant name as input.</small>
+            </div>
+        </div>
+
+        <div class="search-section">
+            <div class="search-box">
+                <label for="restaurantInput">🔍 Enter Restaurant Name:</label>
+                <input type="text" id="restaurantInput" placeholder="e.g., Pizza Hut, McDonald's, Burger King..." class="search-input">
+                <span class="hint">Fuzzy matching will handle typos and partial names automatically</span>
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="citySelect">🏙️ City:</label>
+                    <select id="citySelect" class="filter-select">
+                        <option value="">All Cities</option>
+                        {% for city in cities %}
+                        <option value="{{ city }}">{{ city }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="cuisineSelect">🍽️ Cuisine:</label>
+                    <select id="cuisineSelect" class="filter-select">
+                        <option value="">All Cuisines</option>
+                        {% for cuisine in cuisines %}
+                        <option value="{{ cuisine }}">{{ cuisine }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="priceSelect">💰 Price Range:</label>
+                    <select id="priceSelect" class="filter-select">
+                        <option value="">Any Price</option>
+                        <option value="Budget">Budget ($)</option>
+                        <option value="Moderate">Moderate ($$-$$$)</option>
+                        <option value="Luxury">Luxury ($$$$)</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="ratingSlider">⭐ Minimum Rating: <span id="ratingValue">3.0</span></label>
+                    <input type="range" id="ratingSlider" min="0" max="5" step="0.5" value="3.0" class="slider">
+                </div>
+            </div>
+
+            <button id="searchBtn" class="search-button">🚀 Get Recommendations</button>
+            <button id="compareBtn" class="compare-button">🔬 Compare All Algorithms (Scientific Analysis)</button>
+        </div>
+
+        <div class="results-section">
+            <h2>📊 Recommendation Results</h2>
+            <div id="resultsContainer" class="results-container">
+                <div class="welcome-message">
+                    <h3>Welcome to the Restaurant Recommender System! 🎉</h3>
+                    <p>This system implements four different recommendation algorithms as part of my BSP 3 project:</p>
+                    <ul>
+                        <li><strong>Content-Based Filtering:</strong> Uses cosine similarity to find restaurants with similar features</li>
+                        <li><strong>Popularity-Based Filtering:</strong> Recommends highly-rated restaurants using weighted scoring (50% rating, 30% sentiment, 20% reviews)</li>
+                        <li><strong>Category-Based Filtering:</strong> Groups restaurants by cuisine categories</li>
+                        <li><strong>K-Means Clustering:</strong> Uses machine learning with 7 clusters to find similar restaurants</li>
+                    </ul>
+                    <p>Select an algorithm above and enter a restaurant name to get started!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparison-section">
+            <h2>🔬 Scientific Comparison</h2>
+            <div id="comparisonResults" class="comparison-results">
+                <p>Click "Compare All Algorithms" to see a scientific analysis of all four recommendation approaches.</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>📋 Project Information</h2>
+            <div class="project-info">
+                <div class="info-card">
+                    <h3>🎓 Student Information</h3>
+                    <ul>
+                        <li><strong>Name:</strong> Israel Micheal</li>
+                        <li><strong>Student ID:</strong> 023111832D</li>
+                        <li><strong>University:</strong> University of Luxembourg</li>
+                        <li><strong>Course:</strong> BSP 3 Project</li>
+                        <li><strong>Tutor:</strong> Dr. Giacomo Di Tollo</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>🛠️ Technologies Used</h3>
+                    <ul>
+                        <li>Python Flask (Backend)</li>
+                        <li>HTML5, CSS3, JavaScript (Frontend)</li>
+                        <li>pandas, scikit-learn (Data Processing)</li>
+                        <li>TextBlob (Sentiment Analysis)</li>
+                        <li>FuzzyWuzzy (String Matching)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>📈 Algorithms Implemented</h3>
+                    <ul>
+                        <li>Content-Based Filtering</li>
+                        <li>Popularity-Based Filtering</li>
+                        <li>Category-Based Filtering</li>
+                        <li>K-Means Clustering (7 clusters)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
