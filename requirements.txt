@@ -4,7 +4,7 @@
 Flask==2.3.3                    # Web framework for building the web application
 pandas==2.0.3                   # Data manipulation and analysis library
 textblob==0.17.1                # Natural language processing for sentiment analysis
-scikit-learn==1.2.2            # Machine learning library for algorithms and similarity
+scikit-learn==1.0.2            # Machine learning library for algorithms and similarity
 fuzzywuzzy==0.18.0              # Fuzzy string matching for handling typos in restaurant names
 python-Levenshtein==0.21.1      # Optional: improves fuzzywuzzy performance
 gunicorn==21.2.0                # Production WSGI server for deployment
