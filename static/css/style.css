@@ -1,426 +1,253 @@
-/* Reset and Base Styles */
+
+
 * {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradient background */
-    min-height: 100vh; /* Full viewport height */
-    color: #333; /* Default text color */
-    line-height: 1.6; /* Comfortable line spacing */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+    padding: 20px;
 }
 
 .container {
-    max-width: 1200px; /* Maximum content width */
-    margin: 0 auto; /* Center container */
-    padding: 20px; /* Internal spacing */
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* Header Styles */
+/* Header */
 .header {
-    text-align: center; /* Center header content */
-    margin-bottom: 40px; /* Space below header */
-    color: white; /* White text on gradient */
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header h1 {
-    font-size: 2.5rem; /* Large main title */
-    margin-bottom: 10px; /* Space below title */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Text shadow for readability */
-}
-
-.subtitle {
-    font-size: 1.2rem; /* Subtitle size */
-    opacity: 0.9; /* Slightly transparent */
-    margin-bottom: 5px; /* Small bottom margin */
+    color: #2c3e50;
+    margin-bottom: 10px;
 }
 
 .stats {
-    font-size: 1rem; /* Stats text size */
-    opacity: 0.8; /* More transparent */
+    background: #3498db;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
 }
 
-/* Algorithm Section */
+/* Info box */
+.info-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.info-box h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.info-box ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.info-box li {
+    margin-bottom: 5px;
+}
+
+/* Algorithm section */
 .algorithm-section {
-    background: white; /* White background for contrast */
-    padding: 30px; /* Internal spacing */
-    border-radius: 15px; /* Rounded corners */
-    margin-bottom: 30px; /* Space below section */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .algorithm-section h2 {
-    margin-bottom: 20px; /* Space below heading */
-    color: #2c3e50; /* Dark blue-gray color */
+    margin-bottom: 15px;
+    color: #2c3e50;
 }
 
 .algorithm-buttons {
-    display: grid; /* CSS Grid layout */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
-    gap: 15px; /* Space between buttons */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 .algo-btn {
-    background: white; /* White button background */
-    border: 2px solid #e1e5e9; /* Light gray border */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Internal spacing */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.3s ease; /* Smooth hover effects */
-    text-align: center; /* Center button content */
+    padding: 15px 10px;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
 }
 
 .algo-btn:hover {
-    transform: translateY(-2px); /* Lift effect on hover */
-    border-color: #667eea; /* Change border color on hover */
+    border-color: #3498db;
 }
 
 .algo-btn.active {
-    border-color: #667eea; /* Active state border color */
-    background: #f8f9ff; /* Light blue background for active state */
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2); /* Glow effect */
+    border-color: #3498db;
+    background: #e3f2fd;
 }
 
-.algo-btn .icon {
-    font-size: 2rem; /* Large icon size */
-    display: block; /* Block display for proper spacing */
-    margin-bottom: 10px; /* Space below icon */
-}
-
-.algo-btn .title {
-    font-weight: bold; /* Bold title */
-    display: block; /* Block display */
-    margin-bottom: 5px; /* Space below title */
-    color: #2c3e50; /* Dark text color */
-}
-
-.algo-btn .desc {
-    font-size: 0.9rem; /* Smaller description text */
-    color: #666; /* Gray description color */
-}
-
-/* Search Section */
-.search-section {
-    background: white; /* White background */
-    padding: 30px; /* Internal spacing */
-    border-radius: 15px; /* Rounded corners */
-    margin-bottom: 30px; /* Space below section */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Subtle shadow */
-}
-
-.search-box {
-    margin-bottom: 25px; /* Space below search box */
-}
-
-.search-box label {
-    display: block; /* Block display for proper spacing */
-    margin-bottom: 8px; /* Space below label */
-    font-weight: bold; /* Bold label */
-    color: #2c3e50; /* Dark label color */
-}
-
-.search-input {
-    width: 100%; /* Full width input */
-    padding: 15px; /* Comfortable internal spacing */
-    border: 2px solid #e1e5e9; /* Light border */
-    border-radius: 8px; /* Slightly rounded corners */
-    font-size: 16px; /* Comfortable font size */
-    transition: border-color 0.3s; /* Smooth border color transition */
-}
-
-.search-input:focus {
-    outline: none; /* Remove default outline */
-    border-color: #667eea; /* Blue border on focus */
-}
-
-.hint {
-    color: #666; /* Gray hint text */
-    font-size: 0.9rem; /* Smaller text */
-    margin-top: 5px; /* Space above hint */
-    display: block; /* Block display */
-}
-
-.filters {
-    display: grid; /* CSS Grid for filters */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
-    gap: 20px; /* Space between filter groups */
-    margin-bottom: 25px; /* Space below filters */
-}
-
-.filter-group {
-    display: flex; /* Flexbox for vertical alignment */
-    flex-direction: column; /* Stack label and control vertically */
-}
-
-.filter-group label {
-    margin-bottom: 8px; /* Space below label */
-    font-weight: 600; /* Semi-bold label */
-    color: #2c3e50; /* Dark label color */
-}
-
-.filter-select, .slider {
-    padding: 12px; /* Internal spacing */
-    border: 2px solid #e1e5e9; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    font-size: 14px; /* Comfortable font size */
-    transition: border-color 0.3s; /* Smooth border transition */
-}
-
-.filter-select:focus, .slider:focus {
-    outline: none; /* Remove default outline */
-    border-color: #667eea; /* Blue border on focus */
-}
-
-.slider {
-    width: 100%; /* Full width slider */
-}
-
-.search-button {
-    width: 100%; /* Full width button */
-    padding: 15px; /* Comfortable padding */
-    background: linear-gradient(135deg, #667eea, #764ba2); /* Gradient background */
-    color: white; /* White text */
-    border: none; /* No border */
-    border-radius: 8px; /* Rounded corners */
-    font-size: 16px; /* Comfortable font size */
-    font-weight: bold; /* Bold text */
-    cursor: pointer; /* Pointer cursor */
-    transition: all 0.3s ease; /* Smooth hover effects */
-}
-
-.search-button:hover {
-    transform: translateY(-2px); /* Lift effect on hover */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Shadow on hover */
-}
-
-/* Results Section */
-.results-section {
-    background: white; /* White background */
-    padding: 30px; /* Internal spacing */
-    border-radius: 15px; /* Rounded corners */
-    margin-bottom: 30px; /* Space below section */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Subtle shadow */
-}
-
-.results-section h2 {
-    margin-bottom: 20px; /* Space below heading */
-    color: #2c3e50; /* Dark heading color */
+.algo-icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .algorithm-info {
-    background: #e8f4f8; /* Light blue background */
-    padding: 15px; /* Internal spacing */
-    border-radius: 8px; /* Rounded corners */
-    margin-bottom: 20px; /* Space below info */
-    border-left: 4px solid #667eea; /* Accent border */
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
 }
 
-.results-container {
-    min-height: 200px; /* Minimum height for empty state */
+/* Search section */
+.search-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-box {
+    margin-bottom: 15px;
+}
+
+.search-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.hint {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    display: block;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.slider {
+    width: 100%;
+}
+
+.search-button {
+    background: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.search-button:hover {
+    background: #2980b9;
+}
+
+/* Results section */
+.results-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.results-section h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
 }
 
 .welcome-message {
-    text-align: center; /* Center welcome text */
-    padding: 40px; /* Comfortable padding */
-    color: #666; /* Gray text color */
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
 }
 
-.welcome-message h3 {
-    margin-bottom: 15px; /* Space below heading */
-    color: #2c3e50; /* Dark heading color */
+.results-header {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.welcome-message ul {
-    text-align: left; /* Left align list */
-    max-width: 600px; /* Maximum list width */
-    margin: 20px auto; /* Center list */
-}
-
-.welcome-message li {
-    margin-bottom: 8px; /* Space between list items */
-}
-
-/* Restaurant Cards */
 .restaurant-grid {
-    display: grid; /* CSS Grid for cards */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
-    gap: 20px; /* Space between cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
 }
 
 .restaurant-card {
-    background: #f8f9fa; /* Light gray background */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Internal spacing */
-    border-left: 4px solid #667eea; /* Accent border */
-    transition: transform 0.2s; /* Smooth hover effect */
-}
-
-.restaurant-card:hover {
-    transform: translateX(5px); /* Slide effect on hover */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background: white;
 }
 
 .restaurant-name {
-    font-size: 1.2rem; /* Larger restaurant name */
-    font-weight: bold; /* Bold name */
-    margin-bottom: 10px; /* Space below name */
-    color: #2c3e50; /* Dark text color */
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #2c3e50;
 }
 
 .restaurant-info {
-    display: grid; /* Grid for restaurant details */
-    gap: 8px; /* Space between details */
+    color: #666;
+    font-size: 14px;
 }
 
-/* Sentiment score color coding */
-.sentiment-positive { color: #27ae60; font-weight: bold; } /* Green for positive */
-.sentiment-neutral { color: #f39c12; font-weight: bold; } /* Orange for neutral */
-.sentiment-negative { color: #e74c3c; font-weight: bold; } /* Red for negative */
-
-/* Comparison Section */
-.comparison-section {
-    background: white; /* White background */
-    padding: 30px; /* Internal spacing */
-    border-radius: 15px; /* Rounded corners */
-    margin-bottom: 30px; /* Space below section */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Subtle shadow */
-}
-
-.compare-button {
-    width: 100%; /* Full width button */
-    padding: 15px; /* Comfortable padding */
-    background: linear-gradient(135deg, #e74c3c, #c0392b); /* Red gradient */
-    color: white; /* White text */
-    border: none; /* No border */
-    border-radius: 8px; /* Rounded corners */
-    font-size: 16px; /* Comfortable font size */
-    font-weight: bold; /* Bold text */
-    cursor: pointer; /* Pointer cursor */
-    margin-bottom: 20px; /* Space below button */
-    transition: all 0.3s ease; /* Smooth hover effects */
-}
-
-.compare-button:hover {
-    transform: translateY(-2px); /* Lift effect on hover */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Shadow on hover */
-}
-
-.comparison-results {
-    margin-top: 20px; /* Space above results */
-}
-
-.algorithm-comparison {
-    display: grid; /* Grid for comparison cards */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
-    gap: 20px; /* Space between cards */
-    margin-bottom: 30px; /* Space below comparison */
-}
-
-.comparison-card {
-    background: #f8f9fa; /* Light gray background */
-    padding: 20px; /* Internal spacing */
-    border-radius: 10px; /* Rounded corners */
-    border: 2px solid #e1e5e9; /* Light border */
-}
-
-.comparison-card h4 {
-    margin-bottom: 15px; /* Space below heading */
-    color: #2c3e50; /* Dark heading color */
-}
-
-/* Color coding for strengths and weaknesses */
-.strengths { color: #27ae60; } /* Green for strengths */
-.weaknesses { color: #e74c3c; } /* Red for weaknesses */
-
-/* Info Section */
-.info-section {
-    background: white; /* White background */
-    padding: 30px; /* Internal spacing */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Subtle shadow */
-}
-
-.info-section h2 {
-    margin-bottom: 20px; /* Space below heading */
-    color: #2c3e50; /* Dark heading color */
-}
-
-.project-info {
-    display: grid; /* Grid for info cards */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-    gap: 20px; /* Space between cards */
-}
-
-.info-card {
-    background: #f8f9fa; /* Light gray background */
-    padding: 20px; /* Internal spacing */
-    border-radius: 10px; /* Rounded corners */
-    border-left: 4px solid #667eea; /* Accent border */
-}
-
-.info-card h3 {
-    margin-bottom: 15px; /* Space below heading */
-    color: #2c3e50; /* Dark heading color */
-}
-
-.info-card ul {
-    list-style: none; /* Remove default bullets */
-}
-
-.info-card li {
-    margin-bottom: 5px; /* Space between list items */
-    padding-left: 15px; /* Space for custom bullet */
-    position: relative; /* For custom bullet positioning */
-}
-
-.info-card li:before {
-    content: "•"; /* Custom bullet */
-    color: #667eea; /* Blue bullet color */
-    position: absolute; /* Absolute positioning */
-    left: 0; /* Align to left */
-}
-
-/* Loading and Error States */
+/* Loading and error states */
 .loading {
-    text-align: center; /* Center loading text */
-    padding: 40px; /* Comfortable padding */
-    color: #666; /* Gray text */
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.spinner {
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
 .error {
-    background: #ffeaea; /* Light red background */
-    color: #e74c3c; /* Red text */
-    padding: 15px; /* Internal spacing */
-    border-radius: 8px; /* Rounded corners */
-    border-left: 4px solid #e74c3c; /* Red accent border */
-    margin: 10px 0; /* Vertical spacing */
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px; /* Reduced padding on mobile */
-    }
-    
-    .header h1 {
-        font-size: 2rem; /* Smaller title on mobile */
-    }
-    
-    .algorithm-buttons {
-        grid-template-columns: 1fr; /* Single column on mobile */
-    }
-    
-    .filters {
-        grid-template-columns: 1fr; /* Single column filters */
-    }
-    
-    .restaurant-grid {
-        grid-template-columns: 1fr; /* Single column cards */
-    }
-    
-    .project-info {
-        grid-template-columns: 1fr; /* Single column info cards */
-    }
+    background: #ffeaa7;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #fdcb6e;
 }
