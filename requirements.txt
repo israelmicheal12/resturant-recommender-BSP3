@@ -9,6 +9,3 @@ fuzzywuzzy==0.18.0              # Fuzzy string matching for handling typos in re
 python-Levenshtein==0.21.1      # Optional: improves fuzzywuzzy performance
 gunicorn==21.2.0                # Production WSGI server for deployment
 numpy==1.24.3                   # Numerical computing library (required by scikit-learn)
-scipy==1.11.4
-joblib==1.2.0
-threadpoolctl==3.1.0
